@@ -1,16 +1,26 @@
+import React, { Component } from 'react';
 
-import './App.css';
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    }
+  }
 
-/* function App() {
-  return (
-    <div className="App">
-     <h1>Welcome to CISE - the home of learning and fun</h1>
-    </div>
-  );
-} */
-const App =()=><div className="App">
-<h1>Welcome to CISE - the home of learning and fun</h1>
-</div>
+  makeIncrementer = amount => () =>
+    this.setState(prevState => ({
+      count: prevState.count + amount,
+    }));
 
-export default App;
+  increment = this.makeIncrementer(1);
 
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button className="increment" onClick={this.increment}>Increment count</button>
+      </div>
+    )
+  }
+}
