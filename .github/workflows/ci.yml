@@ -15,7 +15,11 @@ jobs:
 
     strategy:
       matrix:
+<<<<<<< HEAD
         node-version: [14.x]
+=======
+        node-version: [12.x]
+>>>>>>> e7abc016e8b8305a930a8953f626e6a33a134a78
 
     steps:
     - name: Checkout repository
